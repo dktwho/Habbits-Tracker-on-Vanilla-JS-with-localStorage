@@ -17,6 +17,9 @@ const page = {
   content: {
     daysContainer: document.getElementById('days'),
     nextDay: document.querySelector('.habbit__day')
+  },
+  popup: {
+    index: document.getElementById('add-habbit_popup')
   }
 
 }
@@ -28,6 +31,14 @@ function loadData() {
   const habbitArray = JSON.parse(habbitsString)
   if(Array.isArray(habbitArray)) {
     habbits = habbitArray
+  }
+}
+
+function togglePopup() {
+  if(page.popup.index.classList.contains('cover_hidden')) {
+    page.popup.index.classList.remove('cover_hidden')
+  } else {
+    page.popup.index.classList.add('cover_hidden')
   }
 }
 
